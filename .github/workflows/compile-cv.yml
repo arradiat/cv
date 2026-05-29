@@ -21,7 +21,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/arradiat/arradiat.github.io.git website
+          git clone https://x-access-token:${{ secrets.PAGES_TOKEN }}@github.com/arradiat/arradiat.github.io.git website
           cp main.pdf website/Mame_resume.pdf
           cd website
           git add Mame_resume.pdf
