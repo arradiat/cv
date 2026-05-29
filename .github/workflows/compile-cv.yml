@@ -17,10 +17,13 @@ jobs:
         with:
           root_file: main.tex
 
-      - name: Commit PDF
+      - name: Push PDF to website repo
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add main.pdf
-          git diff --cached --quiet || git commit -m "Auto-compile CV PDF"
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/arradiat/arradiat.github.io.git website
+          cp main.pdf website/Mame_resume.pdf
+          cd website
+          git add Mame_resume.pdf
+          git diff --cached --quiet || git commit -m "Update CV PDF"
           git push
