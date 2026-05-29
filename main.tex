@@ -1,0 +1,288 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=0.6in, right=0.6in, top=0.55in, bottom=0.55in]{geometry}
+\usepackage{mathpazo}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Colors ---
+\definecolor{theme}{HTML}{014D4E}%{02A6E2}
+
+% --- Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=theme,
+    urlcolor=theme,
+    pdftitle={Mame Diarra Toure - CV},
+}
+
+% --- Formatting ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\small\color{gray} \thepage\,/\,\pageref{LastPage}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{theme}\uppercase}
+  {}{0em}
+  {}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\header}[5]{
+    \begin{center}
+        {\LARGE \textbf{\color{theme}\uppercase{#1} \uppercase{#2}}} \\[2pt]
+        {\small \color{black} #3} \\[1pt]
+        \footnotesize
+        #4 $\cdot$ \href{mailto:#5}{#5}
+        $\cdot$ \href{https://arradiat.github.io}{arradiat.github.io}
+    \end{center}
+    \vspace{-0.5em}
+}
+
+\newcommand{\entry}[4]{
+    \vspace{0.3em}
+    \noindent \textbf{#1} \hfill #2 \\
+    {\small \textit{#3}}
+    \begin{itemize}[leftmargin=1.2em, nosep, label=\tiny$\bullet$, itemsep=1pt]
+        #4
+    \end{itemize}
+}
+
+\newcommand{\pub}[4]{
+    \vspace{0.3em}
+    \noindent \textbf{\href{#2}{#1}} \hfill {\small #3} \\
+    {\small #4}
+}
+
+\newcommand{\skillgroup}[2]{
+    \noindent\textbf{#1:} #2 \\
+}
+
+\begin{document}
+
+% --- Header ---
+\header{Mame Diarra}{TOURE}
+{PhD Candidate in Mathematics and Statistics, McGill University}
+{Montr\'eal, Canada $\cdot$ +1 579 589 1038}
+{mame.toure@mail.mcgill.ca}
+\vspace{0.2em}
+\begin{center}
+{\small \textit{Expected graduation: Spring 2027 $\cdot$ Seeking full-time Research Scientist positions starting Fall 2027}}
+\end{center}
+\vspace{-0.3em}
+% =====================================================
+\section{Research Interests}
+% =====================================================
+\vspace{0.2em}
+{\small
+Bayesian deep learning; trustworthy AI; scalable variational inference; uncertainty quantification for neural networks; low-rank and structured approximations; time-series foundation models; out-of-distribution detection; AI for health.
+}
+
+% =====================================================
+\section{Education}
+% =====================================================
+
+\entry{McGill University, Montr\'eal, Canada}{2022 -- 2027 (expected)}
+{PhD Candidate in Mathematics and Statistics \normalfont{(Supervisor: Prof.\ David A.\ Stephens)}}
+{\item \textbf{Expected graduation:} Spring 2027.
+    \item \textbf{Thesis:} Scalable Bayesian Deep Learning for Uncertainty Quantification.
+    \item Developing low-rank variational factorizations of neural-network weight matrices that reduce parameter count and training cost while producing calibrated predictive distributions.
+    \item Applications to time-series forecasting, out-of-distribution detection, and calibrated prediction under distributional shift across MLPs, LSTMs, and Transformers.
+    \item Studying complexity adaptation to match model capacity to data structure, and per-class epistemic uncertainty decomposition for safety-critical classification.
+}
+
+\entry{Universit\'e Paris-Saclay, France}{2019 -- 2021}
+{MSc in Quantitative Finance -- First Class Honours (Ranked Top 5\%)}
+{
+    \item Coursework: Stochastic Calculus, Monte Carlo Methods, Numerical Analysis, Optimization, Statistical Modeling, Partial Differential Equations, Deep Learning, Stochastic Control.
+    \item \textbf{Thesis:} Mathematical modeling of systemic exposure to central counterparties using Monte Carlo simulation methods (conducted at BNP Paribas Global Markets; see Professional Experience).
+}
+
+\entry{ENSIIE (Grande \'Ecole), \'Evry, France}{2018 -- 2021}
+{Engineering Degree (Dipl\^ome d'Ing\'enieur) in Applied Mathematics \& Computer Science}
+{
+    \item Operations Research: Scheduling, Dynamic Programming, Network Flows, Branch and Bound, Linear and Integer Programming.
+    \item Machine Learning, Numerical Optimization, Stochastic Calculus, Numerical Analysis, Statistical Modeling, Simulation Methods.
+}
+
+\entry{Universit\'e d'\'Evry Val d'Essonne (Universit\'e Paris-Saclay), France}{2018 -- 2019}
+{BSc in Mathematics -- First Class Honours (Ranked Top 5\%)}
+{
+    \item Double degree completed concurrently with ENSIIE engineering studies.
+    \item Coursework in real analysis, algebra, measure theory, probability, topology, and mathematical optimization.
+}
+
+\entry{Classes Pr\'eparatoires aux Grandes \'Ecoles (MPSI\,/\,MP)}{2016 -- 2018}
+{Lyc\'ee Sainte Croix Saint Euverte, Orl\'eans, France}
+{
+    \item Intensive two-year programme in advanced mathematics, physics, and computer science preparing for the national competitive entrance examinations (Concours) to top French engineering schools.
+    \item Ranked first in cohort. Successfully passed the Concours for Grandes \'Ecoles.
+}
+
+% =====================================================
+\section{Research \& Publications}
+% =====================================================
+
+\pub{Singular Bayesian Neural Networks}
+{https://arxiv.org/abs/2602.00387}
+{\textcolor{theme}{Accepted at ICML 2026} $\cdot$ \href{https://arradiat.github.io/projects/singular-bnn/}{project page}} 
+{{\textbf{M.\ D.\ Toure}}, D.\ A.\ Stephens.
+Proposes a low-rank variational inference framework for Bayesian neural networks that parameterizes each weight matrix as a product of two smaller factor matrices, each carrying a learned posterior distribution. Reduces parameter complexity while producing calibrated uncertainty estimates and establishes PAC-Bayes generalization bounds that scale with the chosen rank. Validated across MLPs, LSTMs, and Transformers with strong out-of-distribution detection and prediction interval coverage, matching Deep Ensembles at up to $30\times$ fewer parameters.}
+
+\pub{Not Just How Much, But Where: Per-Class Epistemic Uncertainty}
+{https://arxiv.org/abs/2602.21160}
+{Preprint (under review), 2026}
+{{\textbf{M.\ D.\ Toure}}, D.\ A.\ Stephens.
+Decomposes model uncertainty into per-class epistemic contributions via a novel vector-valued metric, enabling systems to identify which specific class predictions are unreliable rather than flagging overall uncertainty. Applied to safety-critical classification (diabetic retinopathy grading) where it distinguishes catastrophic misses from severity underestimates that are invisible to standard scalar uncertainty measures.}
+
+\pub{When Does a Low-Rank BNN Certify Its Deterministic Center?}
+{ https://arradiat.github.io/certify_deterministic_center.pdf}
+{\textcolor{theme}{Accepted at SPIGM Workshop, ICML 2026}}
+{{\textbf{M.\ D.\ Toure}}, D.\ A.\ Stephens.
+Investigates the conditions under which a low-rank Bayesian neural network provides
+theoretical guarantees on its deterministic (MAP) center, characterizing the geometry
+and rank constraints under which the variational posterior certifies the quality of
+the point estimate. Connects low-rank factorization structure to generalization
+certification via PAC-Bayes arguments.}
+\vspace{0.3em}
+
+\noindent \textbf{Ongoing work}\\
+{\small Scaling the SBNN framework to time-series foundation models for uncertainty-aware forecasting. Current directions include low-rank Bayesian adaptation of pretrained Transformer encoders (MOMENT, Chronos, TimesFM) and a data-driven per-layer rank selection algorithm based on the Vendi Score of pre-activations. Target applications include demand forecasting under distributional shift (e.g., supply disruptions, seasonal regime changes) and urban mobility prediction, where calibrated predictive distributions feed directly into inventory, routing, and fleet planning decisions.}
+\section{Talks \& Presentations}
+
+\vspace{0.3em}
+\noindent \textbf{Singular Bayesian Neural Networks} \hfill July 2026 \\
+{\small International Conference on Machine Learning (ICML 2026), Seoul, South Korea.}
+
+\vspace{0.3em}
+\noindent \textbf{Not Just How Much, But Where: Decomposing Epistemic Uncertainty into Per-Class Contributions} \hfill June 2026 \\
+{\small 2nd Workshop: Uncertainty in AI, IVADO Thematic Semester -- Statistical Foundations of AI, Montréal, Canada.}
+
+\vspace{0.3em}
+\noindent \textbf{Scalable Uncertainty Quantification for Safe and Trustworthy AI Systems} \hfill July 2026 \\
+{\small Women in Machine Learning (WiML) Symposium and Workshop, co-located with ICML 2026, Seoul, South Korea.}
+
+\vspace{0.3em}
+\noindent \textbf{AFSA Québec Scientific Day} \hfill August 2026 \\
+{\small Co-organizer and host, Association des Femmes Scientifiques Africaines du Québec, Montréal, Canada.}
+% =====================================================
+\section{Professional Experience}
+% =====================================================
+
+\entry{Hydro-Qu\'ebec (IREQ -- Institut de Recherche d'Hydro-Qu\'ebec)}{May 2026 -- Dec 2026}
+{Research Scientist \normalfont{(Mitacs Accelerate Fellow)}}
+{
+    \item Adapting the Singular Bayesian Neural Network (SBNN) framework to self-supervised pretraining of Transformer encoders on large-scale industrial time series.
+    \item The host pipeline comprises approximately 8{,}000 specialist encoders pretrained on hydroelectric sensor signals; each encoder is simultaneously compressed via learned low-rank weight factorizations and equipped with calibrated epistemic uncertainty through variational inference.
+    \item Enabling principled encoder selection for downstream load forecasting and fault detection tasks, with calibrated predictive distributions supporting safety-critical operational decisions.
+    \item Supported by a Mitacs Accelerate Fellowship (competitive industry-academic research fellowship).
+}
+
+\entry{Cr\'edit Agricole S.A.\ (Inspection G\'en\'erale), France}{Sep 2024 -- Jan 2025}
+{Quantitative Model Auditor}
+{
+    \item Audited quantitative models across the Cr\'edit Agricole group for robustness, governance, and regulatory compliance.
+    \item Evaluated model sensitivity to input perturbations and identified weaknesses in uncertainty handling and calibration procedures.
+    \item Produced diagnostic reports synthesizing technical findings and remediation recommendations for senior management and group risk committees.
+}
+
+\entry{JACOBB (Center for Applied AI), Montr\'eal}{May 2022 -- July 2024}
+{Applied Research Scientist \normalfont{(Supervisors: P.\ Rosin, Dr.\ M.\ Cot\'e)}}
+{
+    \item \textbf{Budget pacing (advertising):} Formulated a real-time budget allocation problem as constrained optimization and developed a Reinforcement Learning agent to pace advertising spend under operational constraints and stochastic demand.
+    \item \textbf{Investor--startup matching (NLP):} Designed a collaborative filtering system to match startups with potential investors, addressing severe labeled-data sparsity through latent factor models.
+    \item \textbf{Ingredient prediction (NLP):} Implemented topic modeling techniques for predicting dish ingredients for a food delivery company.
+    \item Translated research prototypes into deployed solutions; contributed to internal R\&D projects spanning NLP, recommendation systems, and optimization.
+}
+
+\entry{J.P.\ Morgan Chase \& Co.}{Summer 2023}
+{Quantitative Research Mentorship Program}
+{
+    \item Competitively selected for J.P.\ Morgan's Quantitative Research Mentorship Program providing one-on-one mentorship with an experienced quantitative researcher.
+    \item Worked on topics in quantitative analytics, financial engineering, and risk modeling.
+}
+
+\entry{Soci\'et\'e G\'en\'erale, Paris}{Nov 2021 -- Feb 2022}
+{Quantitative Analyst}
+{
+    \item Contributed to the \textit{Haussmann} project: a group-wide redesign of the internal Probability of Default (PD) and Loss Given Default (LGD) models used for credit risk assessment.
+    \item Proposed a novel estimation approach for computing PD on portfolio segments with exceptionally low historical default rates, addressing the statistical challenge of inference under extreme data scarcity.
+}
+
+\entry{BNP Paribas (Global Markets), Paris}{May 2021 -- Oct 2021}
+{Quantitative Research Intern \normalfont{(Supervisor: D.\ Bastide)}}
+{
+    \item Developed a mathematical model to quantify the bank's exposure to central counterparties (CCPs), specifically modeling default-fund contributions to the various clearing houses to which BNP Paribas belongs.
+    \item Built a Monte Carlo simulation framework for estimating exposure distributions; work formed the basis of the MSc thesis.
+    \item Concurrently contributed to a project at Natixis applying neural networks to the pricing of Credit Valuation Adjustment (CVA) in high-dimensional settings.
+}
+
+\entry{LaMME (Laboratory of Mathematics and Modeling), Universit\'e d'\'Evry, France}{Summer 2019}
+{Research Intern \normalfont{(Supervisors: Dr.\ S.\ Pulido, Dr.\ N.\ Brunel)}}
+{
+    \item Investigated kernel estimation techniques for Volterra processes in the context of rough volatility models.
+    \item First research experience; developed skills in mathematical formulation, numerical experimentation, and iterating on approaches that did not initially converge.
+}
+
+% =====================================================
+\section{Awards \& Scholarships}
+% =====================================================
+\vspace{0.3em}
+\vspace{0.3em}
+\noindent \textbf{\href{https://www.mitacs.ca/our-programs/accelerate/}{Mitacs Accelerate Fellowship}} \hfill May-December 2026 \\
+{\small Mitacs. Competitive industry-academic research fellowship supporting doctoral research in collaboration with Hydro-Québec. Project focused on uncertainty-aware time-series foundation models for energy forecasting applications.}
+
+\noindent \textbf{\href{https://mila.quebec/en/news/a-fourth-edition-for-the-mila-edi-scholarship-program}{Mila Women in AI Excellence Scholarship}} \hfill 2024 \\
+{\small Mila -- Quebec AI Institute (EDI Scholarships Program). Competitive award recognizing outstanding research potential and commitment to safe, trustworthy AI among women in AI at the graduate level. Provides financial support and integration within Mila's research community.}
+
+\vspace{0.3em}
+\noindent \textbf{\href{https://www.fondation-hadamard.fr/en/our-programs/transversal-programs/graduate-program/apply-for-a-sophie-germain-scholarship/}{Sophie Germain Excellence Scholarship}} \hfill 2020 \\
+{\small Jacques Hadamard Mathematics Foundation (FMJH). Competitive international scholarship supporting exceptional students in the Paris-Saclay ``Mathematics and Applications'' Master's programme, awarded on the basis of academic excellence and research potential.}
+
+% =====================================================
+\section{Teaching}
+% =====================================================
+
+\entry{McGill University}{Fall 2025 -- Summer 2026}
+{Graduate Teaching Assistant, Department of Mathematics and Statistics}
+{
+    \item \textbf{MATH 139} (Calculus with Precalculus), \textbf{MATH 140} (Calculus 1), and \textbf{MATH 141} (Calculus 2): leading weekly tutorials, holding office hours, and providing individualized support on limits, differentiation, integration, and series.
+    \item Focus on strengthening conceptual understanding, clear mathematical communication, and structured problem-solving techniques.
+}
+\vspace{0.3em}
+\noindent \textbf{Private Mathematics Tutor} \hfill 2016 -- 2022 \\
+{\small Part-time tutoring of middle school and high school students in mathematics throughout undergraduate, graduate studies.}
+
+% =====================================================
+\section{Community \& Mentorship}
+% =====================================================
+\vspace{0.3em}
+
+{\small
+\textbf{AFSA Qu\'ebec} (Association des Femmes Scientifiques Africaines du Qu\'ebec): Member of the organizing committee and former representative at McGill University (since Summer 2023). AFSA supports incoming African female graduate students during their transition to Qu\'ebec and motivates girls in home countries to pursue scientific studies in Qu\'ebec universities.
+
+\vspace{0.2em}
+\textbf{Jiggen In STEM} (``Women In STEM'' in Wolof): Mentor supporting high school girls in Senegal pursuing STEM careers, drawing on personal experience navigating underrepresentation in mathematics.
+
+\vspace{0.2em}
+\textbf{Women in AI North America} and \textbf{Association of Women in Mathematics}: Active member and mentee; benefiting from structured mentorship on research direction, career planning, and professional development.
+}
+
+% =====================================================
+\section{Technical Skills}
+% =====================================================
+\vspace{0.2em}
+\skillgroup{Programming}{Python (PyTorch, TensorFlow, NumPy, Pandas, scikit-learn), C++, R, SQL}
+\skillgroup{Methods}{Bayesian Inference, Variational Methods, Monte Carlo Simulation, PAC-Bayes Theory, Low-Rank Matrix Factorization, Operations Research (LP, IP, DP, Network Flows), Numerical Optimization, Stochastic Calculus}
+\skillgroup{Languages}{French (Native), English (Fluent), Wolof (Native)}
+
+\end{document}
