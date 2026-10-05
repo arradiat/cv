@@ -3,7 +3,7 @@
 % --- Packages ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[left=0.6in, right=0.6in, top=0.55in, bottom=0.55in]{geometry}
+\usepackage[left=0.6in, right=0.6in, top=0.45in, bottom=0.5in]{geometry}
 \usepackage{mathpazo}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -35,7 +35,7 @@
   {\large\bfseries\color{theme}\uppercase}
   {}{0em}
   {}[\titlerule]
-\titlespacing{\section}{0pt}{8pt}{4pt}
+\titlespacing{\section}{0pt}{5pt}{2pt}
 
 \newcommand{\header}[5]{
     \begin{center}
@@ -49,7 +49,7 @@
 }
 
 \newcommand{\entry}[4]{
-    \vspace{0.3em}
+    \vspace{0.15em}
     \noindent \textbf{#1} \hfill #2 \\
     {\small \textit{#3}}
     \begin{itemize}[leftmargin=1.2em, nosep, label=\tiny$\bullet$, itemsep=1pt]
@@ -153,19 +153,26 @@ theoretical guarantees on its deterministic (MAP) center, characterizing the geo
 and rank constraints under which the variational posterior certifies the quality of
 the point estimate. Connects low-rank factorization structure to generalization
 certification via PAC-Bayes arguments.}
+
+\vspace{0.3em}
+\begin{minipage}{\linewidth}
+\noindent \textbf{\href{https://openreview.net/forum?id=hAuJBIQHEr}{Evaluating the Ranking Layer of Rare-Disease Decision Support: Bayesian Uncertainty Under Temporal and Patient Shift}} \hfill {\small \textcolor{theme}{Accepted at GenAI for Health Workshop, NeurIPS 2026} $\cdot$ \href{https://arradiat.github.io/projects/rare-disease-real-kid/}{project page}} \\
+{\small {\textbf{M.\ D.\ Toure}}, B.\ F.\ P.\ Dossou.
+Evaluates the variant-ranking layer of rare-disease decision support under temporal and patient shift, comparing deterministic baselines, deep ensembles, SBNNs, and Bayes-by-Backprop. Wide rank-50 SBNN gives the best temporal ClinVar ranking (84.35\% top-1), ensembles the strongest unseen-gene OOD detection, and phenotype conditioning helps only where gene-disease evidence exists.}
+\end{minipage}
 \vspace{0.3em}
 
 \noindent \textbf{Ongoing work}\
 {\small
 \begin{itemize}[leftmargin=1.2em, nosep, label=\tiny$\bullet$, itemsep=1pt]
 \item \textbf{Time-series foundation models:} Scaling the SBNN framework to uncertainty-aware time-series foundation models, including low-rank Bayesian adaptation of pretrained Transformer encoders (MOMENT, Chronos, TimesFM) and data-driven per-layer rank selection based on the Vendi Score of pre-activations. Target applications include demand forecasting under distributional shift and urban mobility prediction, where calibrated predictive distributions support inventory, routing, and fleet planning decisions.
+\item \textbf{\href{https://arradiat.github.io/projects/rare-disease-real-kid/}{Rare Disease, Real Kid MVA Hackathon (Anthropic/AWS)}:} Phenotype-guided whole-genome pipeline narrowing 5.08 million variants to six pairs and ranking the accepted causal pair first (100 Rank Points, F-max 1.0).
 \item \textbf{Molecular graph neural networks:} Developing end-to-end low-rank Bayesian GNNs for uncertainty-aware molecular property prediction under scaffold shift. The project studies whether over-specified GINE architectures can reveal smaller viable low-rank Bayesian models, using spectral compressibility diagnostics, tapered layerwise rank allocation, embedding compression, rank-calibrated priors, and uncertainty–cost evaluation against deterministic GNNs, full MFVI Bayesian GNNs, SWAG, Deep ensembles, and post-hoc UQ baselines.
 \end{itemize}
 }
 
 \section{Awards \& Scholarships}
 % =====================================================
-\vspace{0.3em}
 \vspace{0.3em}
 \noindent \textbf{\href{https://ism.uqam.ca/scholarships/}{ISM Scholarship for Outstanding PhD Candidates}} \hfill Winter 2027 \\
 {\small Institut des sciences math\'ematiques (ISM). Competitive scholarship awarded to \textbf{outstanding} doctoral students in their final year, selected across the consortium of eight Qu\'ebec universities (including McGill, Universit\'e de Montr\'eal, UQAM, Concordia, Laval), to support full-time concentration on thesis writing and defence preparation.}
@@ -263,6 +270,12 @@ certification via PAC-Bayes arguments.}
 % =====================================================
 \section{Teaching}
 % =====================================================
+
+\entry{McGill University}{Fall 2026 -- Present}
+{Head Teaching Assistant, Department of Mathematics and Statistics}
+{
+    \item \textbf{MATH 140} (Calculus 1) and \textbf{MATH 141} (Calculus 2): coordinating a team of 20 teaching assistants.
+}
 
 \entry{McGill University}{Fall 2025 -- Summer 2026}
 {Graduate Teaching Assistant, Department of Mathematics and Statistics}
