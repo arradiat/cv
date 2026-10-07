@@ -162,14 +162,21 @@ Evaluates the variant-ranking layer of rare-disease decision support under tempo
 \end{minipage}
 \vspace{0.3em}
 
+\begin{minipage}{\linewidth}
+\noindent \textbf{Modular Bayesian Foundation Models: Bayesian Time Series Encoders for OOD Detection, Routing and Forecasting} \hfill {\small \textcolor{theme}{Preprint, under review}} \\
+{\small {\textbf{M.\ D.\ Toure}}, et al.
+Proposes a modular framework combining end-to-end Bayesian encoder training with label-free, uncertainty-based expert routing. Built on SBNNs, the encoder collection uses $63.8\%$ less storage than its deterministic counterpart. Versus distance-based routing, improves ECE (0.086 to 0.072), NLL (0.907 to 0.836) and PICP90 (82.3\% to 89.0\%) at competitive MSE, and matches deep ensembles on forecasting accuracy with $92.8\%$ fewer parameters.}
+\end{minipage}
+\vspace{0.1em}
+
 \noindent \textbf{Ongoing work}\
-{\small
+%{\small
 \begin{itemize}[leftmargin=1.2em, nosep, label=\tiny$\bullet$, itemsep=1pt]
-\item \textbf{Time-series foundation models:} Scaling the SBNN framework to uncertainty-aware time-series foundation models, including low-rank Bayesian adaptation of pretrained Transformer encoders (MOMENT, Chronos, TimesFM) and data-driven per-layer rank selection based on the Vendi Score of pre-activations. Target applications include demand forecasting under distributional shift and urban mobility prediction, where calibrated predictive distributions support inventory, routing, and fleet planning decisions.
-\item \textbf{\href{https://arradiat.github.io/projects/rare-disease-real-kid/}{Rare Disease, Real Kid MVA Hackathon (Anthropic/AWS)}:} Phenotype-guided whole-genome pipeline narrowing 5.08 million variants to six pairs and ranking the accepted causal pair first (100 Rank Points, F-max 1.0).
-\item \textbf{Molecular graph neural networks:} Developing end-to-end low-rank Bayesian GNNs for uncertainty-aware molecular property prediction under scaffold shift. The project studies whether over-specified GINE architectures can reveal smaller viable low-rank Bayesian models, using spectral compressibility diagnostics, tapered layerwise rank allocation, embedding compression, rank-calibrated priors, and uncertainty–cost evaluation against deterministic GNNs, full MFVI Bayesian GNNs, SWAG, Deep ensembles, and post-hoc UQ baselines.
+%\item \textbf{Time-series foundation models:} Scaling the SBNN framework to uncertainty-aware time-series foundation models, including low-rank Bayesian adaptation of pretrained Transformer encoders (MOMENT, Chronos, TimesFM) and data-driven per-layer rank selection based on the Vendi Score of pre-activations. Target applications include demand forecasting under distributional shift and urban mobility prediction, where calibrated predictive distributions support inventory, routing, and fleet planning decisions.
+%\item \textbf{\href{https://arradiat.github.io/projects/rare-disease-real-kid/}{Rare Disease, Real Kid MVA Hackathon (Anthropic/AWS)}:} Phenotype-guided whole-genome pipeline narrowing 5.08 million variants to six pairs and ranking the accepted causal pair first (100 Rank Points, F-max 1.0).
+\item \textbf{Bayesian Molecular graph neural networks:} Developing end-to-end low-rank Bayesian GNNs for uncertainty-aware molecular property prediction under scaffold shift. The project studies whether over-specified GINE architectures can reveal smaller viable low-rank Bayesian models, using spectral compressibility diagnostics, tapered layerwise rank allocation, embedding compression, rank-calibrated priors, and uncertainty–cost evaluation against deterministic GNNs, full MFVI Bayesian GNNs, SWAG, Deep ensembles, and post-hoc UQ baselines.
 \end{itemize}
-}
+
 
 \section{Awards \& Scholarships}
 % =====================================================
@@ -231,7 +238,7 @@ Evaluates the variant-ranking layer of rare-disease decision support under tempo
 \entry{JACOBB (Center for Applied AI), Montr\'eal}{May 2022 -- July 2024}
 {Applied Research Scientist \normalfont{(Supervisors: P.\ Rosin, Dr.\ M.\ Cot\'e)}}
 {
-    \item \textbf{Budget pacing (advertising):} Formulated a real-time budget allocation problem as constrained optimization and developed a Reinforcement Learning agent to pace advertising spend under operational constraints and stochastic demand.
+    \item \textbf{Budget pacing (Reinforcement Learning):} Formulated a real-time budget allocation problem as constrained optimization and developed a Reinforcement Learning agent to pace advertising spend under operational constraints and stochastic demand.
     \item \textbf{Investor--startup matching (NLP):} Designed a collaborative filtering system to match startups with potential investors, addressing severe labeled-data sparsity through latent factor models.
     \item \textbf{Ingredient prediction (NLP):} Implemented topic modeling techniques for predicting dish ingredients for a food delivery company.
     \item Translated research prototypes into deployed solutions; contributed to internal R\&D projects spanning NLP, recommendation systems, and optimization.
@@ -283,13 +290,12 @@ Evaluates the variant-ranking layer of rare-disease decision support under tempo
     \item \textbf{MATH 139} (Calculus with Precalculus), \textbf{MATH 140} (Calculus 1), and \textbf{MATH 141} (Calculus 2): leading weekly tutorials, holding office hours, and providing individualized support on limits, differentiation, integration, and series.
  
 }
-\vspace{0.3em}
 
 
 % =====================================================
 \section{Community \& Mentorship}
 % =====================================================
-\vspace{0.3em}
+\vspace{0.1em}
 
 {\small
 \textbf{AFSA Qu\'ebec} (Association des Femmes Scientifiques Africaines du Qu\'ebec): Member of the organizing committee and former representative at McGill University (since Summer 2023). AFSA supports incoming African female graduate students during their transition to Qu\'ebec and motivates girls in home countries to pursue scientific studies in Qu\'ebec universities.
